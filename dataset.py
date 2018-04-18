@@ -3,13 +3,28 @@ from textacy.datasets import Wikipedia
 import wikipedia
 from wikipedia import DisambiguationError
 import datetime
+import os
+
+data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
+
+NAME          = 'wikipedia'
+DESCRIPTION   = ('All articles for a given language- and version-specific Wikipedia site snapshot.')
+SITE_URL      = 'https://meta.wikimedia.org/wiki/Data_dumps'
+DATA_DIR      = os.path.join(data_dir, NAME)
+
+DOWNLOAD_ROOT = 'https://dumps.wikimedia.org/'
 
 WP_PATH = textacy.__file__[:-11] + 'data/wikipedia'
 
-class Dataset(Wikipedia):
-    def __init__(self, category_filter = set(), title_filter = set()):
+class Dataset(textacy.datasets.Wikipedia):
+    def __init__(self, category_filter = set(), title_filter = set(), data_dir = DATA_DIR, lang = 'en', version = 'latest'):
+        super(Wikipedia, self).__init__(name = NAME, description = DESCRIPTION, site_url = SITE_URL, data_dir = data_dir)
         self.category_filter = category_filter
         self.title_filter = title_filter
+        self.lang = lang
+        self.version = version
+        self.filestub = '{lang}wiki/{version}/{lang}wiki-{version}-pages-articles.xml.bz2'.format(version=self.version, lang=self.lang)
+        self._filename = os.path.join(data_dir, self.filestub)
 
     def generate_stream(self, category_filter = set(), title_filter = set(), limit = 5, fast = True):
         
@@ -27,9 +42,7 @@ class Dataset(Wikipedia):
         text_stream, metadata_stream = textacy.io.split_records(stream, content_field)
         return text_stream, metadata_stream
     
-    def expand_filters(self,
-                       title_filter=None,
-                       category_filter=None):
+    def expand_filters(self, title_filter=None, category_filter=None):
         
         if title_filter is None:
             title_filter = self.title_filter
@@ -52,7 +65,6 @@ def get_related_titles(pages, rate_limit=True, min_wait=datetime.timedelta(0, 0,
             titles.add(title)
 
     return titles
-
 
 def get_related_categories(pages, rate_limit=True, min_wait=datetime.timedelta(0, 0, 50000), categories=set()):
 
