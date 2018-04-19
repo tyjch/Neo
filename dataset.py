@@ -16,18 +16,16 @@ DOWNLOAD_ROOT = 'https://dumps.wikimedia.org/'
 
 WP_PATH = textacy.__file__[:-11] + 'data/wikipedia'
 
-class Dataset(textacy.datasets.Wikipedia):
-    def __init__(self, category_filter = set(), title_filter = set(), data_dir = DATA_DIR, lang = 'en', version = 'latest'):
-        super(Wikipedia, self).__init__(name = NAME, description = DESCRIPTION, site_url = SITE_URL, data_dir = data_dir)
-        self.category_filter = category_filter
-        self.title_filter = title_filter
-        self.lang = lang
-        self.version = version
-        self.filestub = '{lang}wiki/{version}/{lang}wiki-{version}-pages-articles.xml.bz2'.format(version=self.version, lang=self.lang)
-        self._filename = os.path.join(data_dir, self.filestub)
 
-    def generate_stream(self, category_filter = set(), title_filter = set(), limit = 5, fast = True):
-        
+# 'class Dataset'
+class Dataset(Wikipedia):
+    def __init__(self, data_dir, title_filter=set(), category_filter=set()):
+        super().__init__(self, data_dir)
+        self.title_filter = title_filter
+        self.category_filter = category_filter
+
+    def generate_stream(self, category_filter=set(), title_filter=set(), limit=5, fast=True):
+
         if not Bool(category_filter):
             category_filter = self.category_filter
         if not Bool(title_filter):
@@ -36,22 +34,22 @@ class Dataset(textacy.datasets.Wikipedia):
         for record in self.records(limit=limit, fast=fast):
             if record['title'] in title_filter or set(record['categories']) in category_filter:
                 yield record
-                
+
     def split_stream(content_field='text'):
         stream = generate_stream(self.category_filter, self.text_filter)
         text_stream, metadata_stream = textacy.io.split_records(stream, content_field)
         return text_stream, metadata_stream
-    
+
     def expand_filters(self, title_filter=None, category_filter=None):
-        
+
         if title_filter is None:
             title_filter = self.title_filter
         if category_filter is None:
             category_filter = self.category_filter
-        
-        titles, categories = get_related_pages(title_filter,
-                                               titles = title_filter,
-                                               categories = category_filter)
+
+        # titles, categories = get_related_pages(title_filter,
+        #                                       titles=title_filter,
+        #                                       categories=category_filter)
 
 
 def get_related_titles(pages, rate_limit=True, min_wait=datetime.timedelta(0, 0, 50000), titles=set()):
