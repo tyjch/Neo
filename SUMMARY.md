@@ -7,6 +7,7 @@
 * Purpose
 * Dependencies
   * spaCy
+  * textacy
 
 ## Documentation
 
