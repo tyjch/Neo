@@ -43,7 +43,7 @@ There are two main types of operations we will be performing on the graph:
 
 Unfortunately, some preferred names for functions don't disambiguate between creating and querying. For example, functions that start with _'**get\_\*\*\*'  **_don't distinguish between using the **MediaWiki API** to get metadata in order to create a node and retrieving an already existing node in the graph database. To distinguish them, we'll use the following conventions:
 
-| Prefix | Usage |
+| **Prefix** | **Usage** |
 | --- | --- | --- | --- |
 | 'create...' | For functions that add nodes directly from JSON |
 | 'expand...' | For functions that create new nodes based on existing nodes |
