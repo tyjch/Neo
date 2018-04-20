@@ -4,5 +4,3 @@
 
 ## `def retrieve_categories():`
 
-
-
