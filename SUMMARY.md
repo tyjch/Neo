@@ -8,6 +8,10 @@
 * Dependencies
   * spaCy
   * textacy
+  * py2neo
+  * scikit-learn
+  * pandas
+  * numPy
 
 ## Documentation
 
