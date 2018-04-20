@@ -50,10 +50,6 @@ Unfortunately, some "informative" names for functions don't disambiguate between
 | 'remove...' | For functions that remove objects from the graph |
 | 'retrieve...' | For functions that return data from the graph |
 
-### Creating
-
-
-
 
 
 
