@@ -22,7 +22,7 @@
     * [Querying the Graph](documentation/modules/graph/untitled.md)
   * [corpus](documentation/modules/corpus/README.md)
     * [Corpus](documentation/modules/corpus/corpus/README.md)
-      * Attributes
+      * [Attributes](documentation/modules/corpus/corpus/attributes.md)
   * extract
   * training
   * evaluation
