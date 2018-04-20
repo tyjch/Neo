@@ -12,5 +12,7 @@
 
 * [graph](documentation/graph.md)
 * corpus
-* Untitled
+* extract
+* training
+* evaluation
 
