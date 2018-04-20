@@ -11,5 +11,3 @@ docs      = Iterable[Doc] or Iterable[spacy.Doc]
 metadatas = Iterable[dict]
 ```
 
-### Attributes
-
