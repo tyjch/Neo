@@ -6,7 +6,7 @@
 
 * Purpose
 * Dependencies
-  * [spaCy](overview/dependencies/spacy.md)
+  * spaCy
 
 ## Documentation
 
