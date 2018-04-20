@@ -7,20 +7,23 @@ description: >-
 
 # graph
 
-## `def expand():`
+## `def get_categories():`
 
 {% tabs %}
 {% tab title="From Page" %}
 ```python
 >>> page = 'Set (mathematics)'
->>> categories = expand(page)
+>>> categories = get_categories(page, depth=1)
 >>> print(categories)
 ['Concepts in logic', 'Mathematical objects', 'Set theory']
 ```
 {% endtab %}
 
 {% tab title="From Pages" %}
-
+```python
+>>> pages = ['Set (mathematics)', 'Kernel method']
+>>> 
+```
 {% endtab %}
 
 {% tab title="From Category" %}
@@ -32,7 +35,7 @@ description: >-
 {% endtab %}
 {% endtabs %}
 
-## 
+## `def get_pages():`
 
 
 
