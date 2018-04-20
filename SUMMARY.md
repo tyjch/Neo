@@ -5,7 +5,6 @@
 ## Overview
 
 * Purpose
-* [Package Structure](overview/package-structure.md)
 * Dependencies
 
 ## Documentation
