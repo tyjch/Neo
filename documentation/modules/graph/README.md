@@ -7,32 +7,24 @@ description: >-
 
 # graph
 
-## `def expand_categories():`
+## Module Limitations
 
-For each page or category in a list, update the graph so that 
+In **Neo4j**, operations are handled by a query language called **Cypher**. Although **py2neo **helps us avoid using **Cypher** directly, there are many advanced features that are much easier to carry out in **Cypher **than** Python. **Rather than completely reinventing the wheel, we will provide basic functionality for creating nodes and relationships and querying graphs to pull data into **Python**. If you need more advanced capabilities, I would recommend learning [Cypher](../../../overview/dependencies/neo4j.md). From there you can work directly with **Cypher** scripts or extend **py2neo** or this package if you want to provide a object-oriented interface.
 
-#### Examples
+## Creating vs. Querying
 
-{% tabs %}
-{% tab title="Pages" %}
-```python
->>> page = ['Set (mathematics)']
->>> subcategories = expand_categories(page, depth = 1)
->>> print(subcategories)
-['Concepts in logic', 'Mathematical objects', 'Set theory']
-```
-{% endtab %}
+There are two main types of operations we will be performing on the graph:
 
-{% tab title="Categories" %}
-```python
->>> categories = ['Mathematical objects']
->>> subcategories = expand_categories(categories, depth = 1)
+* Creating, editing, deleting nodes and relationships
+* Retrieving data from the graph
 
-```
-{% endtab %}
-{% endtabs %}
+** **
 
-## `def expand_pages():`
+### Creating
+
+
+
+
 
 
 

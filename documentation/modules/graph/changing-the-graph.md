@@ -19,11 +19,17 @@ depth = 1
 
 ## `def set_pages():`
 
-
-
 ### Parameters
 
 ```text
 input_list 
 ```
+
+## `def expand_categories():`
+
+For each page or category in a list, update the graph so that 
+
+#### Examples
+
+
 
