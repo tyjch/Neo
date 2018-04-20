@@ -8,6 +8,7 @@
 * Dependencies
   * spaCy
   * textacy
+  * Neo4j
   * py2neo
   * scikit-learn
   * pandas
