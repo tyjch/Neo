@@ -1,3 +1,7 @@
+---
+description: A Corpus is an ordered collection of Docs
+---
+
 # Corpus
 
 ## **Corpus**`(textacy.corpus.Corpus)`
