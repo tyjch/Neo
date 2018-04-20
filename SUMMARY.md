@@ -21,7 +21,8 @@
     * [Changing the Graph](documentation/modules/graph/changing-the-graph.md)
     * [Querying the Graph](documentation/modules/graph/untitled.md)
   * [corpus](documentation/modules/corpus/README.md)
-    * Corpus
+    * [Corpus](documentation/modules/corpus/corpus/README.md)
+      * Attributes
   * extract
   * training
   * evaluation
