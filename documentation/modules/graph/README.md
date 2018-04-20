@@ -9,29 +9,26 @@ description: >-
 
 ## `def expand_categories():`
 
+For each page or category in a list, update the graph so that 
+
+#### Examples
+
 {% tabs %}
-{% tab title="From Page" %}
+{% tab title="Pages" %}
 ```python
->>> page = 'Set (mathematics)'
->>> categories = expand_categories(page, depth = 1)
->>> print(categories)
+>>> page = ['Set (mathematics)']
+>>> subcategories = expand_categories(page, depth = 1)
+>>> print(subcategories)
 ['Concepts in logic', 'Mathematical objects', 'Set theory']
 ```
 {% endtab %}
 
-{% tab title="From Pages" %}
+{% tab title="Categories" %}
 ```python
->>> pages = ['Set (mathematics)', 'Kernel method']
->>> 
+>>> categories = ['Mathematical objects']
+>>> subcategories = expand_categories(categories, depth = 1)
+
 ```
-{% endtab %}
-
-{% tab title="From Category" %}
-
-{% endtab %}
-
-{% tab title="From Categories" %}
-
 {% endtab %}
 {% endtabs %}
 

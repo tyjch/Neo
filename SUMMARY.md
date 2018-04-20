@@ -17,7 +17,9 @@
 ## Documentation
 
 * Modules
-  * [graph](documentation/modules/graph.md)
+  * [graph](documentation/modules/graph/README.md)
+    * [Changing the Graph](documentation/modules/graph/changing-the-graph.md)
+    * Querying the Graph
   * corpus
   * extract
   * training
