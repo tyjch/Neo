@@ -7,16 +7,18 @@ description: >-
 
 # corpus
 
-## Corpus
+## **Corpus**`(textacy.corpus.Corpus)`
 
-### Inheritance
+### Initialization
 
 ```python
-import textacy
-
-class Doc(textacy.doc.Doc):
-    pass
+lang      = str or spacy.Language
+texts     = Iterable[str]
+docs      = Iterable[Doc] or Iterable[spacy.Doc]
+metadatas = Iterable[dict]
 ```
+
+### Attributes
 
 ### 
 
