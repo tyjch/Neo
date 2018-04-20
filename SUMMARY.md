@@ -15,9 +15,10 @@
 
 ## Documentation
 
-* [graph](documentation/graph.md)
-* corpus
-* extract
-* training
-* evaluation
+* Modules
+  * [graph](documentation/modules/graph.md)
+  * corpus
+  * extract
+  * training
+  * evaluation
 
