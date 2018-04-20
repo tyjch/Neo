@@ -45,10 +45,10 @@ Unfortunately, some "informative" names for functions don't disambiguate between
 
 | **Prefix** | **Usage** |
 | --- | --- | --- | --- | --- |
-| 'create...' | For functions that add nodes directly from JSON |
-| 'expand...' | For functions that create new nodes based on existing nodes |
-| 'remove...' | For functions that remove objects from the graph |
-| 'retrieve...' | For functions that return data from the graph |
+| 'create ...' | For functions that add nodes directly from JSON |
+| 'expand ...' | For functions that create new nodes based on existing nodes |
+| 'remove ...' | For functions that remove objects from the graph |
+| 'retrieve ...' | For functions that return data from the graph |
 
 
 

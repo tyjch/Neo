@@ -2,7 +2,9 @@
 
 ## `def create_node():`
 
-## `def expand_node():`
+## `def expand_categories():`
 
+## `def expand_nodes():`
 
+## 
 
