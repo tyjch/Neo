@@ -6,7 +6,7 @@
 
 * Purpose
 * Dependencies
-  * \[spaCy\]\(https://spacy.io/api/\)
+  * spaCy
   * textacy
   * Neo4j
   * py2neo

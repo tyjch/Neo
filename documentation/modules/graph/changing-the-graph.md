@@ -40,6 +40,10 @@
 
 ## `def reset_graph():`
 
+#### Input
+
+* Graph to reset
+
 
 
 
