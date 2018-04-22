@@ -10,6 +10,15 @@
   * textacy
   * Neo4j
   * py2neo
+    * data
+    * database
+    * selection
+    * ogm
+    * cypher
+      * reading
+      * writing
+    * console
+    * admin
   * scikit-learn
   * pandas
   * numPy
