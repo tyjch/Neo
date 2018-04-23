@@ -1,4 +1,5 @@
 # To Do
 
-* [ ] Finish documentation for py2neo.database.Transaction
-* [ ] 
+* [x] Finish documentation for py2neo.database.Transaction
+* [ ] Finish py2neo.database
+
