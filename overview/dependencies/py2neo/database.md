@@ -91,6 +91,13 @@ graph = Graph('bolt://localhost:7687')
 | user | User to authenticate as | str | 'neo4j' |
 | user\_agent | User agent to send for all connections | str | Depends on URI scheme |
 
+### Attributes
+
+```python
+# Get the database to which this graph belongs
+graph.database
+```
+
 ### Working with Subgraphs
 
 #### Creating a Subgraph
@@ -110,4 +117,17 @@ graph.delete(subgraph)
 ```python
 graph.delete_all()
 ```
+
+#### Get Total Degree of Nodes
+
+```python
+# Get the total degree of all nodes in the subgraph
+graph.degree(subgraph)
+```
+
+
+
+### Cypher
+
+
 
