@@ -7,6 +7,8 @@ description: >-
 
 # graph
 
+{% page-ref page="../../../overview/dependencies/py2neo/" %}
+
 ## Module Limitations
 
 In **Neo4j**, operations are handled by a query language called **Cypher**. Although **py2neo **helps us avoid using **Cypher** directly, there are many advanced features that are much easier to carry out in **Cypher **than** Python. **Rather than completely reinventing the wheel, we will provide basic functionality for creating nodes and relationships and querying graphs to pull data into **Python**. If you need more advanced capabilities, I would recommend learning [Cypher](../../../overview/dependencies/neo4j.md). From there you can work directly with **Cypher** scripts or extend **py2neo** or this package if you want to provide a object-oriented interface.

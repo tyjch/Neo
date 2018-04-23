@@ -9,17 +9,9 @@
   * spaCy
   * textacy
   * Neo4j
-  * py2neo
-    * data
-    * database
-    * selection
-    * ogm
-    * cypher
-      * reading
-      * writing
-    * console
-    * admin
-  * scikit-learn
+  * [py2neo](overview/dependencies/py2neo/README.md)
+    * [Classes](overview/dependencies/py2neo/classes.md)
+  * sklearn
   * pandas
   * numPy
 
