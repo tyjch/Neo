@@ -298,6 +298,9 @@ transaction.finished()
 
 # Send all pending statements to the server for processing
 transaction.process()
+
+# Undo all actions previously taken in current transaction
+transaction.rollback()
 ```
 
 ### Using Subgraphs
@@ -319,22 +322,35 @@ transaction.exists(subgraph)
 transaction.merge(subgraph,
                   primary_label=None,
                   primary_key=None)
+
+# Delete remote relationships that correspond to those in the local subgraph
+transaction.separate(subgraph)
 ```
 
 ### Pushing and Pulling Data
 
 ```python
 # Push data from subgraph to remote counterparts
+transaction.push(subgraph)
 
+# Pull data into subgraph from remote counterparts
+transaction.pull(subgraph)
 ```
 
 ### Using Cypher
 
 ```python
 # Execute a single Cypher statement
-transactions.evaluate(cypher,
-                      parameters=None,
-                      **kwparameters)
+transaction.evaluate(cypher,
+                     parameters=None,
+                     **kwparameters)
+                      
+# Send a Cypher statement to the server for execution
+# Returns a cursor to navigate the result
+transaction.run(cypher,
+                parameters=None,
+                **kwparameters)
+                
 ```
 
 
