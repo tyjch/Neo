@@ -222,6 +222,100 @@ subgraph.relationships()
 
 # Returns the set of all relationship types in this subgraph
 subgraph.types()
+
+# Returns the number of nodes in the subgraph
+order(subgraph)
+
+# Returns the number of relationships in the subgraph
+size(subgraph)
+```
+
+## `class Walkable():`
+
+### Instantiation
+
+```python
+# You can create a 'walkable' directly from an iterable
+walkable = Walkable(iterable)
+
+# You can also create one by concatenating existing graph objects
+walkable + other + ...
+```
+
+### Traversal
+
+```python
+# Yield alternating nodes and relationships; starts and ends on a node
+walk(walkable)
+
+# Walks over multiple walkables
+walk(*walkables)
+
+# Return the first node encountered on a walk()
+walkable.start_node
+
+# Return the last node encountered on a walk()
+walkable.end_node
+
+# Return a tuple of all nodes traversed in the order they were encountered 
+walkable.nodes
+
+# Return a tuple of all relationships in the order they were encountered
+walkable.relationships
+```
+
+## `class Path():`
+
+A type of Walkable returned by some Cypher queries
+
+## `class Table():`
+
+### Attributes
+
+```python
+# Return a dictionary of metadata for a given field
+table.field(key)
+
+# Return a list of keys for this table
+table.keys()
+```
+
+### Writing
+
+```python
+# Write to a human-readable table
+table.write(file=None,
+            header=None,
+            skip=None,
+            limit=None,
+            auto_align=True,
+            padding=1,
+            separator='|',
+            newline='\r\n')
+
+# Write to a CSV file
+table.write_csv(file=None,
+                header=None,
+                skip=None,
+                limit=None)
+                
+# Write to HTML
+table.write_html(file=None,
+                 header=None,
+                 skip=None,
+                 limit=None,
+                 auto_align=True)
+                 
+# Write separated values
+table.write(separator,
+            file=None,
+            header=None,
+            skip=None,
+            limit=None,
+            newline='\r\n',
+            quote='"')
+
+# Write tab-separated values
 ```
 
 
