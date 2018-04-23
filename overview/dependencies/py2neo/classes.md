@@ -1,4 +1,4 @@
-# Classes
+# data
 
 ## `class Node():`
 

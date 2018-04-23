@@ -10,10 +10,12 @@
   * textacy
   * Neo4j
   * [py2neo](overview/dependencies/py2neo/README.md)
-    * [Classes](overview/dependencies/py2neo/classes.md)
+    * [data](overview/dependencies/py2neo/classes.md)
+    * database
   * sklearn
   * pandas
   * numPy
+  * apoc
 
 ## Documentation
 
