@@ -353,9 +353,21 @@ transaction.run(cypher,
                 
 ```
 
+## `class Cursor():`
 
+## `class Record():`
 
+## Errors
 
+### `class GraphError():`
+
+### `class ClientError():`
+
+### `class DatabaseError():`
+
+### `class TransientError():`
+
+### `class TransactionFinished():`
 
 
 
