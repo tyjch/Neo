@@ -125,9 +125,23 @@ graph.delete_all()
 graph.degree(subgraph)
 ```
 
-
-
 ### Cypher
 
+#### Evaluate a Cypher Query
 
+```python
+# Returns the first value from the first record returned or None
+graph.evaluate(cypher,
+               parameters=None,
+               **kwparameters)
+```
+
+#### Run a Cypher Query
+
+```python
+# Runs a Transaction.run() operation within an autocommit Transaction
+graph.run(cypher,
+          parameters=None,
+          **kwparameters)
+```
 
