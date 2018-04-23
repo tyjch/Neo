@@ -307,7 +307,7 @@ table.write_html(file=None,
                  auto_align=True)
                  
 # Write separated values
-table.write(separator,
+table.write_separated_values(separator,
             file=None,
             header=None,
             skip=None,
@@ -316,6 +316,10 @@ table.write(separator,
             quote='"')
 
 # Write tab-separated values
+table.write_tsv(file=None,
+                header=None,
+                skip=None,
+                limit=None)
 ```
 
 
