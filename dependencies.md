@@ -1,5 +1,7 @@
 # Dependencies
 
+#### Current
+
 * spaCy
   * textacy
 * Neo4j
@@ -8,4 +10,12 @@
 * Sklearn
 * Pandas
 * Numpy
+
+#### Future
+
+* Tensorflow
+* Pytorch
+* Rasa-NLU
+
+
 

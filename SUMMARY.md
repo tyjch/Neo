@@ -2,18 +2,7 @@
 
 * Home
 * [To Do](to-do.md)
-
-## Overview
-
-* [Dependencies](overview/dependencies/README.md)
-  * spaCy
-  * textacy
-  * Neo4j
-  * [py2neo](overview/dependencies/py2neo.md)
-  * sklearn
-  * pandas
-  * numPy
-  * apoc
+* [Dependencies](dependencies.md)
 
 ## py2neo
 
