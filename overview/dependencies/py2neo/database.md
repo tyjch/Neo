@@ -59,6 +59,17 @@ db.uri
 
 ### Instantiation
 
+```python
+# A Graph can be created using default arguments
+graph = Graph()
+
+# Parameters can be supplied as keywords
+graph = Graph(host='localhost')
+
+# Parameters can also be supplied in the URI scheme
+graph = Graph('bolt://localhost:7687')
+```
+
 #### Support URI Schemes
 
 | http |
