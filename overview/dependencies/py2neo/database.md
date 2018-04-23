@@ -101,6 +101,14 @@ graph.database
 graph.schema
 ```
 
+### Transactions
+
+#### Beginning a New Transaction
+
+```text
+graph.begin(autocommit=False)
+```
+
 ### Working with Subgraphs
 
 #### Creating a Subgraph
@@ -152,7 +160,46 @@ graph.merge(subgraph,
 graph.separate(subgraph)
 ```
 
+### Searching the Graph
+
+#### Matching Relationships
+
+```python
+# Matches and returns all relationships with specific criteria
+graph.match(start_node=None,
+            rel_type=None,
+            end_node=None,
+            bidirectional=False,
+            limit=None)
+```
+
+#### Match One Relationship
+
+```python
+# Match and return one relationship with specific criteria
+graph.math_one(start_node=None,
+               rel_type=None,
+               end_node=None,
+               bidirectional=False)
+```
+
 ### Pushing and Pulling Data
+
+#### Fetching a Node by ID
+
+```python
+# Creates and object representing the remote node with specified ID
+# Fetches no data from the server, so no guarantee it exists remotely
+graph.node(identity)
+```
+
+#### Fetching a Relationship by ID
+
+```python
+# Creates and object representing the remote node with specified ID
+# Fetches no data from the server, so no guarantee it exists remotely
+graph.relationship(identity)
+```
 
 #### Pulling from Remote Counterparts
 
