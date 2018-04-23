@@ -282,9 +282,60 @@ schemda.get_uniqueness_constrains(label)
 
 ### Initialization
 
+```python
+# Created from a Graph object with graph.begin()
+transaction = graph.begin()
+```
+
+### Transaction Actions
+
+```python
+# Commit a transaction
+transaction.commit()
+
+# Indicate whether or not this transaction has been completed
+transaction.finished()
+
+# Send all pending statements to the server for processing
+transaction.process()
+```
+
 ### Using Subgraphs
 
-#### Create Remote Nodes and Relationships
+```python
+# Creating remote nodes & relationships
+transaction.create(subgraph)
+
+# Deleting remote nodes & relationships
+transaction.delete(subgraph)
+
+# Return the total number of relationships attached to all nodes
+transaction.degree(subgraph)
+
+# Check if all entities in 'subgraph' exist remotely
+transaction.exists(subgraph)
+
+# Merge nodes & relationships from local subgraph into database
+transaction.merge(subgraph,
+                  primary_label=None,
+                  primary_key=None)
+```
+
+### Pushing and Pulling Data
+
+```python
+# Push data from subgraph to remote counterparts
+
+```
+
+### Using Cypher
+
+```python
+# Execute a single Cypher statement
+transactions.evaluate(cypher,
+                      parameters=None,
+                      **kwparameters)
+```
 
 
 
