@@ -208,12 +208,21 @@ subgraph ^ other ^ ...
 ### Attributes
 
 ```python
-# Return the set of all property keys used by nodes and relationships in this subgraph
+# Returns the set of all property keys used by nodes and relationships in this subgraph
 subgraph.keys()
 
-# Return the set of all node labels in this subgraph
+# Returns the set of all node labels in this subgraph
 subgraph.labels()
 
-# 
+# Returns the set of all nodes in this subgraph
+subgraph.nodes()
+
+# Returns the set of all relationships in this subgraph
+subgraph.relationships()
+
+# Returns the set of all relationship types in this subgraph
+subgraph.types()
 ```
+
+
 
