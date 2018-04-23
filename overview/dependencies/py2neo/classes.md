@@ -177,7 +177,43 @@ Subgraph is the base class for Node, Relationship, and Walkable; therefore they 
 ```python
 # Returns a new subgraph containing all nodes and relationships in any subgraph
 subgraph | other | ...
+```
 
+#### Intersection
 
+```python
+# Returns a new subgraph containing all nodes and relationships common to all subgraphs
+subgraph & subgraph & ...
+```
+
+#### Difference
+
+```python
+# Returns a new subgraph containing all nodes and relationships in 'subgraph'
+# that do not exist in 'other' as well as all nodes that are connected by those
+# relationships regardless of whether they are common to 'subgraph' or 'other'
+subgraph - other - ...
+```
+
+#### Symmetric Difference
+
+```python
+# Returns a new subgraph containing all nodes and relationships that exist in
+# 'subgraph' or 'other' but not in both, as well as all nodes that are connected
+# By those relationships regardless of whether or not they are common to 'subgraph'
+# and 'other'
+subgraph ^ other ^ ...
+```
+
+### Attributes
+
+```python
+# Return the set of all property keys used by nodes and relationships in this subgraph
+subgraph.keys()
+
+# Return the set of all node labels in this subgraph
+subgraph.labels()
+
+# 
 ```
 
