@@ -55,3 +55,28 @@ db.store_id
 db.uri
 ```
 
+## `class Graph():`
+
+### Instantiation
+
+#### Support URI Schemes
+
+| http |
+| --- | --- | --- | --- |
+| https |
+| bolt |
+| bolt+routing |
+
+#### Supported Settings
+
+| Keyword | Description | Type | Default |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| auth | A 2-tuple of \(user, password\) | tuple | \('neo4j', 'password'\) |
+| host | Database server host name | str | 'localhost' |
+| password | Password to use for authentication | str | 'password' |
+| port | Database server port | int | 7687 |
+| scheme | Use a specific URI scheme | str | 'bolt' |
+| secure | Use a secure connection \(TLS\) | bool | False |
+| user | User to authenticate as | str | 'neo4j' |
+| user\_agent | User agent to send for all connections | str | Depends on URI scheme |
+
