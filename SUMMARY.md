@@ -5,7 +5,6 @@
 
 ## Overview
 
-* Purpose
 * Dependencies
   * spaCy
   * textacy
@@ -18,16 +17,8 @@
   * numPy
   * apoc
 
-## Documentation
+## py2neo
 
-* Modules
-  * [graph](documentation/modules/graph/README.md)
-    * [Changing the Graph](documentation/modules/graph/changing-the-graph.md)
-    * [Querying the Graph](documentation/modules/graph/untitled.md)
-  * [corpus](documentation/modules/corpus/README.md)
-    * [Corpus](documentation/modules/corpus/corpus/README.md)
-      * [Attributes](documentation/modules/corpus/corpus/attributes.md)
-  * extract
-  * training
-  * evaluation
+* data
+* database
 
