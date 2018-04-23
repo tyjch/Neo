@@ -96,6 +96,9 @@ graph = Graph('bolt://localhost:7687')
 ```python
 # Get the database to which this graph belongs
 graph.database
+
+# Get the schema resource for this graph
+graph.schema
 ```
 
 ### Working with Subgraphs
@@ -123,6 +126,44 @@ graph.delete_all()
 ```python
 # Get the total degree of all nodes in the subgraph
 graph.degree(subgraph)
+```
+
+#### Check if Subgraphs Exist
+
+```python
+# Returns True if all entities exist remotely
+# If any nodes or relationships in 'subgraph' do not exist remotely, returns False
+graph.exists(subgraph)
+```
+
+#### Merge Subgraph
+
+```python
+# Merges a subgraph based on matching labels or properties
+graph.merge(subgraph, 
+            label=None,
+            *property_keys)
+```
+
+#### Separate Subgraph
+
+```python
+# Deletes remote relatinoships that correspond to those in local subgraph
+graph.separate(subgraph)
+```
+
+### Pushing and Pulling Data
+
+#### Pulling from Remote Counterparts
+
+```text
+graph.pull(subgraph)
+```
+
+#### Pushing to Remote Counterparts
+
+```text
+graph.push(subgraph)
 ```
 
 ### Cypher
