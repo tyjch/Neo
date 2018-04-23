@@ -86,16 +86,98 @@ rel = Relationship(start_node, type, end_node, **properties)
 ### Equality
 
 ```python
-# Returns True if 'relationship' and 'other' are equal based on the IDs of the nodes, and the relationship type
-node == other
+# Returns True if 'relationship' and 'other' are equal
+# Based on the IDs of the nodes, and the relationship type
+relationship == other
 
-# Returns True if 'node' and 'other' don't have the same remote ID
-node != other
+# Returns True if 'relationship' and 'other' don't have the same remote ID
+relationship != other
 ```
 
-```text
+### Properties
 
+```python
+# Returns the value a property in a relationship
+relationship[key]
+
+# Set the value of a property in a relationship
+relationship[key] = value
+
+# Deleting a property in a relationship
+del relationship[key]
+
+# Return the number of properties in a node
+len(node)
+
+# Return a dictionary of the properties in a node
+dict(node)
 ```
 
+### Type
 
+```python
+# Return the type of a relationship
+type(relationship)
+```
+
+## `class PropertyDict():`
+
+### Instantiation
+
+```python
+property_dict = PropertyDict(iterable, **kwargs)
+```
+
+### Equality
+
+```python
+# Returns True if equal to 'other' 
+# After all None values are removed from 'other' first
+properties == other
+
+# Returns True if unequal to 'other' 
+# After all None values are removed from 'other' first
+properties != other
+```
+
+### Properties
+
+```python
+# Returns the value associated with 'key'
+# If 'key' is missing, None is returned
+properties[key]
+
+# Set the value of a property with 'key'
+relationship[key] = value
+
+# If 'key' is in 'properties' return its value
+# If not, then insert key with value 'default'
+properties.setdefault(key, default=None)
+
+# Adds or overwrites the values with an iterable of key-value pairs
+# Or with keyword arguments
+# Any value of None will effectively delete the property with that key
+properties.update(iterable=None, **kwargs)
+```
+
+## `class Subgraph():`
+
+### Instantiation
+
+```python
+subgraph = Subgraph(nodes, relationships)
+```
+
+### Set Operations
+
+Subgraph is the base class for Node, Relationship, and Walkable; therefore they can use these set operations as well.
+
+#### Union
+
+```python
+# Returns a new subgraph containing all nodes and relationships in any subgraph
+subgraph | other | ...
+
+
+```
 
