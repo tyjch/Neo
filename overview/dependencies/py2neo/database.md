@@ -278,7 +278,15 @@ schema.drop_uniqueness_constraint(label, *property_keys)
 schemda.get_uniqueness_constrains(label)
 ```
 
-## class Transaction\(\):
+## `class Transaction():`
+
+### Initialization
+
+### Using Subgraphs
+
+#### Create Remote Nodes and Relationships
+
+
 
 
 
