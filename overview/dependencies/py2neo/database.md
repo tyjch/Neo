@@ -101,9 +101,13 @@ graph.create(subgraph)
 
 #### Deleting a Subgraph
 
-```text
+```python
 graph.delete(subgraph)
 ```
 
+#### Deleting all Nodes & Relationships
 
+```python
+graph.delete_all()
+```
 
