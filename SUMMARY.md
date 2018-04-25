@@ -6,6 +6,8 @@
 
 ## py2neo
 
-* [data](py2neo/classes.md)
+* [data](py2neo/classes/README.md)
+  * [Node](py2neo/classes/node.md)
+  * Relationship
 * [database](py2neo/database-1.md)
 
