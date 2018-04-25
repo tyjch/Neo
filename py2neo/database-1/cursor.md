@@ -35,7 +35,17 @@ for record in cursor:
 
 ### Basic Methods
 
+```python
+# Close this cursor and free up associated resources
+cursor.close()
 
+# Return current record in cursor
+cursor.current()
 
-
+# Attempts to move forward and returns a value from the next record
+# The field that returns the value can be returned by integer or text key
+cursor.evaluate()
+cursor.evaluate(field = 1)
+cursor.evaluate(field = "name")
+```
 
