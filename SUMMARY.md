@@ -20,6 +20,6 @@
   * [Schema](py2neo/database-1/schema.md)
   * [Transaction](py2neo/database-1/transaction.md)
   * [Cursor](py2neo/database-1/cursor.md)
-  * Record
+  * [Record](py2neo/database-1/record.md)
   * [Errors](py2neo/database-1/errors.md)
 
