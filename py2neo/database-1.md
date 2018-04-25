@@ -355,6 +355,10 @@ transaction.run(cypher,
 
 ## `class Cursor():`
 
+### Instantiation
+
+
+
 ## `class Record():`
 
 ## Errors
