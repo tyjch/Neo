@@ -14,5 +14,6 @@
   * [Walkable](py2neo/classes/untitled.md)
   * [Path](py2neo/classes/path.md)
   * [Table](py2neo/classes/table.md)
-* [database](py2neo/database-1.md)
+* [database](py2neo/database-1/README.md)
+  * Untitled
 
