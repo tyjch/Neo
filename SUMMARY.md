@@ -15,5 +15,12 @@
   * [Path](py2neo/classes/path.md)
   * [Table](py2neo/classes/table.md)
 * [database](py2neo/database-1/README.md)
-  * Untitled
+  * Database
+  * Graph
+  * Schema
+  * Transaction
+  * Cursor
+  * Record
+  * Errors
+    * Untitled
 
