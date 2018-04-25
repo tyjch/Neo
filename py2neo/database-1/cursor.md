@@ -42,10 +42,55 @@ cursor.close()
 # Return current record in cursor
 cursor.current()
 
+# Move the cursor one record forward
+cursor.forward()
+
+# Move the cursor 'n' steps forward
+cursor.forward(amount = n)
+
 # Attempts to move forward and returns a value from the next record
-# The field that returns the value can be returned by integer or text key
 cursor.evaluate()
 cursor.evaluate(field = 1)
 cursor.evaluate(field = "name")
+
+# Returns the field names of records in the stream
+cursor.keys()
+
+# Returns the next record in the stream or raises StopIteration
+cursor.next()
+
+# Returns the plan returned with this result, if any
+cursor.plan()
+
+# Returns query statistics
+cursor.stats()
+```
+
+### Converting Results
+
+```python
+# Convert to pandas.DataFrame
+df = cursor.to_data_frame(index = None,
+                          columns = None
+                          dtype = None)
+
+# Convert to sympy.Matrix
+matrix = cursor.to_matrix(mutable = False)
+
+# Convert to numpy.ndarray
+ndarray = cursor.to_ndarray(dtype = None,
+                            order = 'K')
+                            
+# Convert to pandas.Series
+series = cursor.to_series(field = 0,
+                          index = None,
+                          dtype = None)
+                          
+# Convert to subgraph
+subgraph = cursor.to_subgraph()
+
+# Convert to table
+table = cursor.to_table()
+
 ```
 
