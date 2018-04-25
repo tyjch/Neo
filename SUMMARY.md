@@ -8,6 +8,11 @@
 
 * [data](py2neo/classes/README.md)
   * [Node](py2neo/classes/node.md)
-  * Relationship
+  * [Relationship](py2neo/classes/relationship.md)
+  * [PropertyDict](py2neo/classes/propertydict.md)
+  * [Subgraph](py2neo/classes/subgraph.md)
+  * [Walkable](py2neo/classes/untitled.md)
+  * [Path](py2neo/classes/path.md)
+  * [Table](py2neo/classes/table.md)
 * [database](py2neo/database-1.md)
 
