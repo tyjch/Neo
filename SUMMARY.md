@@ -22,4 +22,6 @@
   * [Cursor](py2neo/database-1/cursor.md)
   * [Record](py2neo/database-1/record.md)
   * [Errors](py2neo/database-1/errors.md)
+* selection
+  * [NodeSelection](py2neo/selection/nodeselection.md)
 
