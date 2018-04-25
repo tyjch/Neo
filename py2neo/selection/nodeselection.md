@@ -31,6 +31,12 @@ selection.order_by("_.name", "max(._a, _.b)")
 # Skips the first 'n' nodes in the result
 selection.skip(5)
 
+# Further refine the selection withi conditions and properties
+# Conditions are Cypher expressions found in WHERE clauses
+selection.where(*conditions, **properties)
+
+
+
 
 
 ```
