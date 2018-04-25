@@ -19,7 +19,7 @@
   * [Graph](py2neo/database-1/graph.md)
   * [Schema](py2neo/database-1/schema.md)
   * [Transaction](py2neo/database-1/transaction.md)
-  * Cursor
+  * [Cursor](py2neo/database-1/cursor.md)
   * Record
   * [Errors](py2neo/database-1/errors.md)
 
