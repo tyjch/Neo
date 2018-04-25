@@ -24,4 +24,5 @@
   * [Errors](py2neo/database-1/errors.md)
 * selection
   * [NodeSelection](py2neo/selection/nodeselection.md)
+  * [NodeSelector](py2neo/selection/nodeselector.md)
 
