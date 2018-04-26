@@ -39,7 +39,7 @@
 
 * Overview
 * Containers
-  * Doc
+  * [Doc](spacy/containers/doc.md)
   * Token
   * Span
   * Lexeme
