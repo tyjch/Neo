@@ -19,5 +19,43 @@
 | _`doc.user_span_hooks`_ | dict | A dictionary that allows custom properties of Spans |
 | _`doc._`_ | - | User space for custom attribute extensions |
 
+## Methods
+
+### Magic Methods
+
+#### Doc.\_\_init\_\_
+
+```python
+# Constructs a Doc object directly
+doc = Doc.__init__(vocab,                   # Vocab
+                   words,                   # List of strings
+                   spaces)                  # Bool
+
+# More commonly created through spacy.Language ('nlp')
+doc = nlp('This is text')
+```
+
+#### Doc.\_\_getitem\_\_
+
+```python
+# Allows you to get a token from a doc by index
+token = doc[0]
+
+# Allows you to get a span from a doc by start and end indexes
+span = doc[2:5]
+```
+
+#### Doc.\_\_iter\_\_
+
+```python
+# Allows you to iterate over the tokens in a doc
+for token in doc:
+    print(token.text)
+```
+
+#### Doc.\_\_len\_\_
+
+### Extension Methods
+
 
 
