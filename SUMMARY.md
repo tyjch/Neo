@@ -1,6 +1,6 @@
 # Table of contents
 
-* Home
+* Functions
 * [To Do](to-do.md)
 * [Dependencies](dependencies.md)
 
@@ -37,5 +37,12 @@
 
 ## spacy
 
-* Untitled
+* Overview
+* Containers
+  * Doc
+  * Token
+  * Span
+  * Lexeme
+* Pipeline
+* Other
 
