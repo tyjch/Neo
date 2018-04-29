@@ -11,7 +11,7 @@ selector = NodeSelector(graph)
 
 ### Methods
 
-Because this returns a `NodeSelection` instance, you can further refine the selection with t`NodeSelection.where()`
+Because this returns a `NodeSelection` instance, you can further refine the selection with`NodeSelection.where()`
 
 ```python
 # Returns a NodeSelection instance
