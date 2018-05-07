@@ -16,7 +16,6 @@ DOWNLOAD_ROOT = 'https://dumps.wikimedia.org/'
 
 WP_PATH = textacy.__file__[:-11] + 'data/wikipedia'
 
-
 # 'class Dataset'
 class Dataset(Wikipedia):
     def __init__(self, data_dir, title_filter=set(), category_filter=set()):
