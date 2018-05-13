@@ -1,4 +1,6 @@
-from py2neo.ogm import GraphObject
+from py2neo.ogm import GraphObject, Property
+from neo.graph.graph import default_graph, neo4j
+import datetime
 
 class Node(GraphObject):
     """
@@ -10,43 +12,25 @@ class Node(GraphObject):
         depth - minimum number of edges away from a root node
         graph - the graph this node belongs to
     """
-    def __init__(self, ):
-        pass
 
-class SourceNode(Node):
-    """
-    Main attributes:
-        source - The URL or key associated with this node
-        parser - The parser that should be used to parse the data
+    title = Property()
+    depth = Property()
+    graph_id = Property()
+    parseable = Property()
+    parsed = Property()
+    data = Property()
+    created = Property()
+    updated = Property()
 
-    Main methods:
-        fetch_data - Fetches data from source
-        save_data - Saves the data
-        load_data - Loads data from saved location
-    """
-
-class NodeParser(object):
-    """
-    Main attributes:
-        compatible_labels - The types of SourceNodes able to be parsed
-
-    Main methods:
-        parse - Parses data from compatible DataNodes and creates new ParsedNodes
-    """
-
-class ParsedNode(Node):
-    """
-    Main attributes:
-        children - A list of Concepts associated with this node
-        parent - The SourceNode that was parsed into this one
-        parser - The NodeParser used to parse the data
-        created - The datetime this node was first created
-        updated - The datetime this node was last parsed
-        is_stale - True if the parser has been changed
-    """
-
-class ParserObserver(object):
-    """
-    Observes the state of the NodeParser. When it changes, notifies ParsedNodes that have been parsed by it that they
-    may need to be parsed again.
-    """
+    def __init__(self, title, graph=default_graph, depth=0, label="Node"):
+        self.__primarylabel__ = label
+        self.title = title
+        self.depth = depth
+        self.graph_id = neo4j.store_id
+        self.parseable = True
+        self.parsed = False
+        self.graph = graph
+        self.data = title  # TODO: Change this
+        self.created = str(datetime.datetime.now())
+        self.updated = str(datetime.datetime.now())
+        graph.push(self)

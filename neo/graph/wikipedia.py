@@ -1,24 +1,16 @@
 from py2neo.ogm import GraphObject, Property, RelatedTo
 from wikipedia import WikipediaPage
-# from neo.graph.data import NodeParser
+from neo.graph.data import Node
+from neo.graph.graph import default_graph
 
-# class CategoryNode(WikiNode):
-# class ArticleNode(WikiNode):
-# class WikiParser(NodeParser):
-
-class WikiNode(GraphObject):
-
-    title = Property()
-    depth = Property()
+class WikiNode(Node):
 
     has_category = RelatedTo("WikiNode")
     has_article = RelatedTo("WikiNode")
 
-    def __init__(self, title, graph, depth=0, label="Article"):
-        self.__primarylabel__ = label
-        self.title = title
-        self.depth = depth
-        self.graph = graph
+    def __init__(self, title, graph=default_graph, label="Wikipedia"):
+        super(WikiNode, self).__init__(title, label=label)
+        #self.__primarylabel__ = label
         graph.push(self)
 
     def get_categories(self):
@@ -53,3 +45,5 @@ class WikiNode(GraphObject):
 
             self.has_article.add(article)
             self.graph.push(self)
+
+
