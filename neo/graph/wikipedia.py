@@ -1,8 +1,8 @@
 from py2neo.ogm import GraphObject, Property, RelatedTo
 from wikipedia import WikipediaPage
-from neo.graph.data import Node
-from neo.graph.graph import default_graph
+from neo.graph.data import Node, TimeMixin
 
+'''
 class WikiNode(Node):
 
     has_category = RelatedTo("WikiNode")
@@ -45,5 +45,12 @@ class WikiNode(Node):
 
             self.has_article.add(article)
             self.graph.push(self)
+'''
 
 
+class WikiNode(Node, TimeMixin):
+
+    def __init__(self, title, label="Wikipedia"):
+        super(Node, self).__init__(title)
+        super(TimeMixin, self).__init__(title)
+        self.__primarylabel__ = label

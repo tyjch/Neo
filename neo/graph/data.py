@@ -1,20 +1,21 @@
+from py2neo import Database
 from py2neo.ogm import GraphObject, Property
-from neo.graph.graph import default_graph, neo4j
 import datetime
+
 
 class Node(GraphObject):
 
-    title = Property()
-    depth = Property()
-    graph_id = Property()
+    __primarykey__ = 'pk'
 
-    def __init__(self, title, graph=default_graph, depth=0, label="Node"):
-        self.__primarylabel__ = label
+    title = Property()
+    pk = Property()
+
+    def __init__(self, title, label="Node"):
+
         self.title = title
-        self.depth = depth
-        self.graph_id = neo4j.store_id
-        self.graph = graph
-        graph.push(self)
+        self.pk = label + ':' + title
+
+        self.__primarylabel__ = label
 
 
 class TimeMixin(GraphObject):
@@ -37,4 +38,16 @@ class DataMixin(GraphObject):
         self.parseable = True
         self.parsed = False
         self.data = None
+
+
+class DefaultGraphMixin(GraphObject):
+
+    graph = Property()
+
+    def __init__(self):
+
+        identifier = Database.store_id
+        time_created = Database.store_creation_time
+
+        self.graph = "{} : {}".format(identifier, time_created)
 
