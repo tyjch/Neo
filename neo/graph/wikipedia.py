@@ -51,6 +51,5 @@ class WikiNode(Node):
 class WikiNode(Node, TimeMixin):
 
     def __init__(self, title, label="Wikipedia"):
-        super(Node, self).__init__(title)
-        super(TimeMixin, self).__init__(title)
-        self.__primarylabel__ = label
+        super(WikiNode, self).__init__(title, label=label)
+        # self.__primarylabel__ = label
