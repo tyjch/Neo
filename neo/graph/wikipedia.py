@@ -1,6 +1,6 @@
 from py2neo.ogm import GraphObject, Property, RelatedTo
 from wikipedia import WikipediaPage
-from neo.graph.data import Node, TimeMixin
+from neo.graph.data import Node, TimeMixin, DefaultGraphMixin
 
 '''
 class WikiNode(Node):
@@ -48,11 +48,22 @@ class WikiNode(Node):
 '''
 
 
-class WikiNode(TimeMixin, Node):
+class WikiNode(DefaultGraphMixin, TimeMixin, Node):
 
-    def __init__(self, title):
-        Node.__init__(self, title)
-        TimeMixin.__init__(self)
+    WIKILABELS = ["Article", "Category"]
+
+    def __init__(self, title, label):
+
+        if label not in WikiNode.WIKILABELS:
+            print("{} is not permitted as a label for this class", label)
+
+        else:
+            # TODO: Check if a node with the same primary key-value pair exists in the graph first
+            Node.__init__(self, title, label)
+            TimeMixin.__init__(self)
+            DefaultGraphMixin.__init__(self)
+
+
 
 
 

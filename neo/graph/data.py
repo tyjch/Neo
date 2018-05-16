@@ -46,8 +46,8 @@ class DefaultGraphMixin(GraphObject):
 
     def __init__(self):
 
-        identifier = Database.store_id
-        time_created = Database.store_creation_time
+        identifier = str(Database.store_id)
+        time_created = str(Database.store_creation_time)
 
-        self.graph = "{} : {}".format(identifier, time_created)
+        self.property_graph = "{} : {}".format(str(identifier), str(time_created))
 
