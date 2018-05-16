@@ -5,44 +5,44 @@ import datetime
 
 class Node(GraphObject):
 
-    __primarykey__ = 'pk'
+    # __primarykey__ = 'pk'
 
-    title = Property()
-    pk = Property()
+    property_title = Property(key='title')
+    property_pk = Property(key='pk')
 
     def __init__(self, title, label="Node"):
 
-        self.title = title
-        self.pk = label + ':' + title
+        self.property_title = title
+        self.property_pk = label + ':' + title
 
         self.__primarylabel__ = label
 
 
 class TimeMixin(GraphObject):
 
-    created = Property()
-    updated = Property()
+    property_created = Property(key='created')
+    property_updated = Property(key='updated')
 
     def __init__(self):
-        self.created = str(datetime.datetime.now())
-        self.updated = str(datetime.datetime.now())
+        self.property_created = str(datetime.datetime.now())
+        self.property_updated = str(datetime.datetime.now())
 
 
 class DataMixin(GraphObject):
 
-    parseable = Property()
-    parsed = Property()
-    data = Property()
+    property_parseable = Property(key='parseable')
+    property_parsed = Property(key='parsed')
+    property_data = Property(key='data')
 
     def __init__(self):
-        self.parseable = True
-        self.parsed = False
-        self.data = None
+        self.property_parseable = True
+        self.property_parsed = False
+        self.property_data = None
 
 
 class DefaultGraphMixin(GraphObject):
 
-    graph = Property()
+    property_graph = Property(key='graph')
 
     def __init__(self):
 
