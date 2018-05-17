@@ -5,7 +5,7 @@ import datetime
 
 class Node(GraphObject):
 
-    # __primarykey__ = 'pk'
+    __primarykey__ = 'pk'
 
     property_title = Property(key='title')
     property_pk = Property(key='pk')
@@ -16,6 +16,7 @@ class Node(GraphObject):
         self.property_pk = label + ':' + title
 
         self.__primarylabel__ = label
+        # self.pk = label + ':' + title
 
 
 class TimeMixin(GraphObject):
@@ -24,8 +25,8 @@ class TimeMixin(GraphObject):
     property_updated = Property(key='updated')
 
     def __init__(self):
-        self.property_created = str(datetime.datetime.now())
-        self.property_updated = str(datetime.datetime.now())
+        self.property_created = str(datetime.datetime.utcnow())
+        self.property_updated = str(datetime.datetime.utcnow())
 
 
 class DataMixin(GraphObject):
@@ -40,7 +41,7 @@ class DataMixin(GraphObject):
         self.property_data = None
 
 
-class DefaultGraphMixin(GraphObject):
+class GraphMixin(GraphObject):
 
     property_graph = Property(key='graph')
 

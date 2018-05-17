@@ -1,4 +1,4 @@
-from neo.graph import graph, data, wikipedia
+from neo.graph import graph, node, wikipedia
 
 
 

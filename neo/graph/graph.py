@@ -1,5 +1,11 @@
 from py2neo import Database
 
-def get_default_database():
-    default_graph = Database.default_graph
-    return default_graph
+
+# TODO: Check if the default database/graph has changed
+def get_default_graph():
+    database = Database()
+    graph = database.default_graph
+    return graph
+
+
+
