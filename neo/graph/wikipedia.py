@@ -64,6 +64,43 @@ class WikiNode(DefaultGraphMixin, TimeMixin, Node):
             DefaultGraphMixin.__init__(self)
 
 
+class Article(WikiNode):
+
+    def __init__(self, title):
+        super(Article, self).__init__(title, "Article")
+
+    def get_categories(self):
+
+        article = WikipediaPage(self.title)
+
+        for category in article.categories:
+            title = prefix + category
+            category = WikiNode(title, self.graph, label="Category")
+            category.depth = self.depth + 1
+
+            self.graph.create(category)
+            self.graph.push(category)
+
+            self.has_category.add(category)
+            self.graph.push(self)
 
 
+class Category(WikiNode):
 
+    property_depth = Property()
+    has_category = RelatedTo("Category")
+
+    def __init__(self, title, depth=0):
+        super(Category, self).__init__(title, "Category")
+        self.property_depth = depth
+
+    def get_categories(self, graph):
+
+        category = WikipediaPage(self.__primarylabel__ + ':' + self.property_title)
+
+        for cat in category.categories:
+            category = Category(cat, depth=self.property_depth + 1)
+            graph.push(category)
+
+            self.has_category.add(category)
+            graph.push(self)
