@@ -6,19 +6,19 @@ from neo.graph.node import Node, TimeMixin, DataMixin, GraphMixin
 class TestNode(TestCase):
 
     def setUp(self):
-        self.node = Node("Title", label="Label")
+        self.node = Node("Title")
 
     def test_title(self):
-        self.assertEqual(self.node.property_title, "Title")
+        self.assertEqual(self.node.title, "Title")
 
     def test_primary_label(self):
-        self.assertEqual(self.node.__primarylabel__, "Label")
+        self.assertEqual(self.node.__primarylabel__, "Node")
 
     def test_primary_key(self):
         self.assertEqual(self.node.__primarykey__, "pk")
 
     def test_primary_value(self):
-        self.assertEqual(self.node.__primaryvalue__, "Label:Title")
+        self.assertEqual(self.node.__primaryvalue__, "Node:Title")
 
 
 class TestTimeMixin(TestCase):

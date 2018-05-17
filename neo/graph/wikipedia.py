@@ -3,24 +3,15 @@ from wikipedia import WikipediaPage
 from neo.graph.node import Node, TimeMixin, GraphMixin
 
 
-class WikiNode(GraphMixin, TimeMixin, Node):
+class WikiNode(Node):
 
     #__primarykey__ = 'pk'
 
-    WIKILABELS = ["Article", "Category"]
-
-    def __init__(self, title, label):
-
-        TimeMixin.__init__(self)
-        GraphMixin.__init__(self)
-        Node.__init__(self, title, label)
-
-        if label not in WikiNode.WIKILABELS:
-            print("{} is not permitted as a label for this class", label)
-
-        # TODO: Check if a node with the same primary key-value pair exists in the graph first
-
-
+    def __init__(self, init_title):
+        super().__init__(init_title)
+        self.label = "WikiNode"
+        self.pk = self.label + ':' + init_title
+        self.title = init_title
 
 
 class Article(WikiNode):

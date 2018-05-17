@@ -5,21 +5,19 @@ import datetime
 
 class Node(GraphObject):
 
-    label = Label()
-    __primarylabel__ = 'label'
+    #__primarylabel__ = 'label'
+    ## label = Label(name = "Label")
 
-    pk = Property(key='pk')
     __primarykey__ = 'pk'
+    pk = Property(key='pk')
 
-    property_title = Property(key='title')
+    title = Property(key='title')
 
-    def __init__(self, title, label="Node"):
+    def __init__(self, init_title):
 
-        self.property_title = title
-        self.pk = label + ':' + title
-
-        self.__primarylabel__ = label
-        # self.pk = label + ':' + title
+        self.label = "Node"
+        self.pk = self.label + ':' + init_title
+        self.title = init_title
 
 
 class TimeMixin(GraphObject):

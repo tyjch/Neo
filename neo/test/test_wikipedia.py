@@ -7,7 +7,7 @@ class TestWikiNode(TestCase):
 
     def setUp(self):
         self.graph = Graph(password="password")
-        self.wikinode = WikiNode("Title", "Article")
+        self.wikinode = WikiNode("Title")
 
     # Node Parts
 
@@ -15,13 +15,13 @@ class TestWikiNode(TestCase):
         self.assertEqual(self.wikinode.property_title, "Title")
 
     def test_primary_label(self):
-        self.assertEqual(self.wikinode.__primarylabel__, "Article")
+        self.assertEqual(self.wikinode.__primarylabel__, "WikiNode")
 
     def test_primary_key(self):
         self.assertEqual(self.wikinode.__primarykey__, "pk")
 
     def test_primary_value(self):
-        self.assertEqual(self.wikinode.__primaryvalue__, "Article:Title")
+        self.assertEqual(self.wikinode.__primaryvalue__, "WikiNode:Title")
 
     def test_property_pk(self):
         self.assertEqual(self.wikinode.property_pk, None)
