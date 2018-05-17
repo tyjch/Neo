@@ -56,9 +56,9 @@ class WikiNode(DefaultGraphMixin, TimeMixin, Node):
 
         if label not in WikiNode.WIKILABELS:
             print("{} is not permitted as a label for this class", label)
-
         else:
             # TODO: Check if a node with the same primary key-value pair exists in the graph first
+
             Node.__init__(self, title, label)
             TimeMixin.__init__(self)
             DefaultGraphMixin.__init__(self)
@@ -66,8 +66,12 @@ class WikiNode(DefaultGraphMixin, TimeMixin, Node):
 
 class Article(WikiNode):
 
-    def __init__(self, title):
+    property_depth = Property()
+    has_article = RelatedTo("Article")
+
+    def __init__(self, title, depth=0):
         super(Article, self).__init__(title, "Article")
+        self.property_depth = depth
 
     def get_categories(self):
 
@@ -89,6 +93,7 @@ class Category(WikiNode):
 
     property_depth = Property()
     has_category = RelatedTo("Category")
+    has_article = RelatedTo("Article")
 
     def __init__(self, title, depth=0):
         super(Category, self).__init__(title, "Category")
@@ -103,4 +108,15 @@ class Category(WikiNode):
             graph.push(category)
 
             self.has_category.add(category)
+            graph.push(self)
+
+    def get_articles(self, graph):
+
+        category = WikipediaPage(self.property_title)
+
+        for page in category.links:
+            article = Article(page, depth=self.property_depth + 1)
+            graph.push(article)
+
+            self.has_article.add(article)
             graph.push(self)
