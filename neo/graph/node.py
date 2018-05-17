@@ -1,19 +1,22 @@
 from py2neo import Database
-from py2neo.ogm import GraphObject, Property
+from py2neo.ogm import GraphObject, Property, Label
 import datetime
 
 
 class Node(GraphObject):
 
+    label = Label()
+    __primarylabel__ = 'label'
+
+    pk = Property(key='pk')
     __primarykey__ = 'pk'
 
     property_title = Property(key='title')
-    property_pk = Property(key='pk')
 
     def __init__(self, title, label="Node"):
 
         self.property_title = title
-        self.property_pk = label + ':' + title
+        self.pk = label + ':' + title
 
         self.__primarylabel__ = label
         # self.pk = label + ':' + title

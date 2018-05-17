@@ -5,18 +5,22 @@ from neo.graph.node import Node, TimeMixin, GraphMixin
 
 class WikiNode(GraphMixin, TimeMixin, Node):
 
+    #__primarykey__ = 'pk'
+
     WIKILABELS = ["Article", "Category"]
 
     def __init__(self, title, label):
 
+        TimeMixin.__init__(self)
+        GraphMixin.__init__(self)
+        Node.__init__(self, title, label)
+
         if label not in WikiNode.WIKILABELS:
             print("{} is not permitted as a label for this class", label)
-        else:
-            # TODO: Check if a node with the same primary key-value pair exists in the graph first
 
-            Node.__init__(self, title, label)
-            TimeMixin.__init__(self)
-            GraphMixin.__init__(self)
+        # TODO: Check if a node with the same primary key-value pair exists in the graph first
+
+
 
 
 class Article(WikiNode):
