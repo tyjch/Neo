@@ -3,7 +3,7 @@ from wikipedia import WikipediaPage
 from neo.graph.node import Node, TimeMixin, GraphMixin
 
 
-class WikiNode(Node):
+class WikiNode(Node, TimeMixin, GraphMixin):
 
     #__primarykey__ = 'pk'
 
