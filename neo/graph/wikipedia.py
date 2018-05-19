@@ -5,8 +5,6 @@ from neo.graph.node import Node, TimeMixin, GraphMixin
 
 class WikiNode(Node, TimeMixin, GraphMixin):
 
-    #__primarykey__ = 'pk'
-
     def __init__(self, init_title):
         super().__init__(init_title)
         self.label = "WikiNode"
