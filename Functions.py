@@ -108,6 +108,7 @@ class Doc(Node):
         :return:
         """
 
+
 class Corpus(Node):
 
     @classmethod
