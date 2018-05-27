@@ -19,7 +19,7 @@ class Article(WikiNode):
     has_article = RelatedTo("Article")
 
     def __init__(self, title, depth=0):
-        super(Article, self).__init__(title, "Article")
+        super(Article, self).__init__(title)
         self.property_depth = depth
         self.__primarylabel__ = "Article"
 
@@ -47,7 +47,7 @@ class Category(WikiNode):
     has_article = RelatedTo("Article")
 
     def __init__(self, title, depth=0):
-        super(Category, self).__init__(title, "Category")
+        super(Category, self).__init__(title)
         self.property_depth = depth
 
     def get_categories(self, graph):
